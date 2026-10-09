@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# NOTE: the old redirects that forwarded /flow, /flow2 and /auditflow to
+# Power Automate were removed. The app now talks to the local ProjectPulse
+# API (see ../backend). Netlify cannot reach a local server, so if this app is
+# deployed there again, host the API somewhere Netlify can reach and add a
+# redirect for /flow, /flow2 and /auditflow pointing at it.
+
+# All routes go to the SPA's index.html (client-side routing)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

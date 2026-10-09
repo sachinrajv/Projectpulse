@@ -1,0 +1,1993 @@
+{
+ "Department": {
+  "select": {
+   "Department Code": [
+    "DepartmentCode",
+    false
+   ],
+   "Department Name": [
+    "DepartmentName",
+    false
+   ],
+   "Status": [
+    "IsActive",
+    false
+   ],
+   "guid": [
+    "DepartmentId",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Department]",
+   "id": null,
+   "item": {
+    "DepartmentCode": "code",
+    "DepartmentName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Department]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "DepartmentCode": "code",
+    "DepartmentName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Department]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Department]"
+ },
+ "Country": {
+  "select": {
+   "CountryCode": [
+    "CountryCode",
+    false
+   ],
+   "CountryName": [
+    "CountryName",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ],
+   "guid": [
+    "CountryId",
+    false
+   ],
+   "currencyId": [
+    "CurrencyId",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Country]",
+   "id": null,
+   "item": {
+    "CountryCode": "code",
+    "CountryName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow",
+    "CurrencyId": "countryCurrencyId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Country]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "CountryCode": "code",
+    "CountryName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow",
+    "CurrencyId": "countryCurrencyId"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Country]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Country]"
+ },
+ "User": {
+  "select": {
+   "UserID": [
+    "UserID",
+    false
+   ],
+   "EmpID": [
+    "EmpID",
+    false
+   ],
+   "FirstName": [
+    "FirstName",
+    false
+   ],
+   "LastName": [
+    "LastNmae",
+    false
+   ],
+   "Gender": [
+    "Gender",
+    false
+   ],
+   "JobTitle": [
+    "JobTitle",
+    false
+   ],
+   "DepartmentID": [
+    "DepartmentID",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ],
+   "Email": [
+    "Email",
+    true
+   ],
+   "ReportingManagerId": [
+    "ReportingManagerId",
+    true
+   ],
+   "LocationId": [
+    "LocationId",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Users]",
+   "id": null,
+   "item": {
+    "EmpID": "empId",
+    "FirstName": "firstName",
+    "LastNmae": "lastName",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "Gender": "gender",
+    "JobTitle": "jobTitle",
+    "DepartmentID": "departmentId",
+    "Email": "email",
+    "ReportingManagerId": "reportingManagerId",
+    "LocationId": "locationId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Users]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "EmpID": "empId",
+    "FirstName": "firstName",
+    "LastNmae": "lastName",
+    "Gender": "gender",
+    "JobTitle": "jobTitle",
+    "DepartmentID": "departmentId",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow",
+    "Email": "email",
+    "ReportingManagerId": "reportingManagerId",
+    "LocationId": "locationId"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Users]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Users]"
+ },
+ "ProjectCategory": {
+  "select": {
+   "CategoryCode": [
+    "Category_x0020_Code",
+    false
+   ],
+   "CategoryName": [
+    "Category_x0020_Name",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ],
+   "guid": [
+    "CategoryId",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ProjectCategory]",
+   "id": null,
+   "item": {
+    "Category_x0020_Code": "code",
+    "Category_x0020_Name": "name",
+    "IsActive": "active"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ProjectCategory]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "Category_x0020_Code": "code",
+    "Category_x0020_Name": "name",
+    "IsActive": "active"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ProjectCategory]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ProjectCategory]"
+ },
+ "Role": {
+  "select": {
+   "RoleCode": [
+    "Role_x0020_Code",
+    false
+   ],
+   "RoleName": [
+    "Role_x0020_Name",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ],
+   "guid": [
+    "RoleId",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Roles]",
+   "id": null,
+   "item": {
+    "Role_x0020_Code": "code",
+    "Role_x0020_Name": "name",
+    "IsActive": "active"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Roles]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "Role_x0020_Code": "code",
+    "Role_x0020_Name": "name",
+    "IsActive": "active"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Roles]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Roles]"
+ },
+ "ProjectResource": {
+  "select": {
+   "guid": [
+    "ProjectResourceId",
+    false
+   ],
+   "projectId": [
+    "ProjectId",
+    false
+   ],
+   "userId": [
+    "UserID",
+    false
+   ],
+   "roleId": [
+    "RoleId",
+    false
+   ],
+   "allocationPct": [
+    "AllocationPct",
+    false
+   ],
+   "weeklyHours": [
+    "WeeklyHours",
+    false
+   ],
+   "billable": [
+    "IsBillable",
+    false
+   ],
+   "startDate": [
+    "StartDate",
+    false
+   ],
+   "endDate": [
+    "EndDate",
+    false
+   ],
+   "designationId": [
+    "DesignationId",
+    true
+   ],
+   "resourceDepartmentId": [
+    "DepartmentId",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ProjectResource]",
+   "id": null,
+   "item": {
+    "ProjectId": "projectId",
+    "UserID": "userId",
+    "RoleId": "roleId",
+    "AllocationPct": "allocationPct",
+    "WeeklyHours": "weeklyHours",
+    "IsBillable": "billable",
+    "StartDate": "startDate",
+    "EndDate": "endDate",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow",
+    "DesignationId": "designationId",
+    "DepartmentId": "resourceDepartmentId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ProjectResource]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ProjectId": "projectId",
+    "UserID": "userId",
+    "RoleId": "roleId",
+    "AllocationPct": "allocationPct",
+    "WeeklyHours": "weeklyHours",
+    "IsBillable": "billable",
+    "StartDate": "startDate",
+    "EndDate": "endDate",
+    "ModifiedOn": "@utcNow",
+    "DesignationId": "designationId",
+    "DepartmentId": "resourceDepartmentId"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ProjectResource]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ProjectResource]"
+ },
+ "Project": {
+  "select": {
+   "guid": [
+    "ProjectId",
+    false
+   ],
+   "projectCode": [
+    "ProjectCode",
+    false
+   ],
+   "projectName": [
+    "ProjectName",
+    false
+   ],
+   "categoryId": [
+    "CategoryId",
+    false
+   ],
+   "clientId": [
+    "ClientId",
+    false
+   ],
+   "billingTypeId": [
+    "BillingTypeId",
+    false
+   ],
+   "dealStatusId": [
+    "DealStatusId",
+    false
+   ],
+   "startDate": [
+    "StartDate",
+    false
+   ],
+   "endDate": [
+    "EndDate",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ],
+   "zohoProjectId": [
+    "ZohoProjectId",
+    true
+   ],
+   "projectManagerUserId": [
+    "ProjectManagerUserId",
+    true
+   ],
+   "deliveryHeadUserId": [
+    "DeliveryHeadUserId",
+    true
+   ],
+   "projectDepartmentId": [
+    "DepartmentId",
+    true
+   ],
+   "currencyId": [
+    "CurrencyId",
+    true
+   ],
+   "projectValue": [
+    "ProjectValue",
+    true
+   ],
+   "geography": [
+    "Geography",
+    true
+   ],
+   "poNumber": [
+    "PONumber",
+    true
+   ],
+   "sowReference": [
+    "SOWReference",
+    true
+   ],
+   "remarks": [
+    "Remarks",
+    true
+   ],
+   "projectStatusId": [
+    "ProjectStatusId",
+    true
+   ],
+   "approvalStatusId": [
+    "ApprovalStatusId",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Project]",
+   "id": null,
+   "item": {
+    "ProjectCode": "projectCode",
+    "ProjectName": "projectName",
+    "CategoryId": "categoryId",
+    "ClientId": "clientId",
+    "BillingTypeId": "billingTypeId",
+    "StartDate": "startDate",
+    "EndDate": "endDate",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow",
+    "ZohoProjectId": "zohoProjectId",
+    "ProjectManagerUserId": "projectManagerUserId",
+    "DeliveryHeadUserId": "deliveryHeadUserId",
+    "DepartmentId": "projectDepartmentId",
+    "CurrencyId": "currencyId",
+    "ProjectValue": "projectValue",
+    "Geography": "geography",
+    "PONumber": "poNumber",
+    "SOWReference": "sowReference",
+    "Remarks": "remarks",
+    "ProjectStatusId": "projectStatusId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Project]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ProjectCode": "projectCode",
+    "ProjectName": "projectName",
+    "CategoryId": "categoryId",
+    "ClientId": "clientId",
+    "BillingTypeId": "billingTypeId",
+    "DealStatusId": "dealStatusId",
+    "StartDate": "startDate",
+    "EndDate": "endDate",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow",
+    "ZohoProjectId": "zohoProjectId",
+    "ProjectManagerUserId": "projectManagerUserId",
+    "DeliveryHeadUserId": "deliveryHeadUserId",
+    "DepartmentId": "projectDepartmentId",
+    "CurrencyId": "currencyId",
+    "ProjectValue": "projectValue",
+    "Geography": "geography",
+    "PONumber": "poNumber",
+    "SOWReference": "sowReference",
+    "Remarks": "remarks",
+    "ProjectStatusId": "projectStatusId"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Project]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Project]"
+ },
+ "DealStatus": {
+  "select": {
+   "guid": [
+    "DealStatusId",
+    false
+   ],
+   "name": [
+    "DealStatusName",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[DealStatus]",
+   "id": null,
+   "item": {
+    "DealStatusName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[DealStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "DealStatusName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[DealStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[DealStatus]"
+ },
+ "Client": {
+  "select": {
+   "guid": [
+    "ClientId",
+    false
+   ],
+   "clientCode": [
+    "ClientCode",
+    false
+   ],
+   "clientName": [
+    "ClientName",
+    false
+   ],
+   "countryId": [
+    "CountryId",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Client]",
+   "id": null,
+   "item": {
+    "ClientCode": "clientCode",
+    "ClientName": "clientName",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow",
+    "CountryId": "countryId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Client]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ClientCode": "clientCode",
+    "ClientName": "clientName",
+    "CountryId": "countryId",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Client]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Client]"
+ },
+ "ClientContacts": {
+  "select": {
+   "guid": [
+    "ContactId",
+    false
+   ],
+   "clientId": [
+    "ClientId",
+    false
+   ],
+   "contactName": [
+    "ContactName",
+    false
+   ],
+   "contactEmail": [
+    "Email",
+    false
+   ],
+   "contactPhone": [
+    "Phone",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ClientContact]",
+   "id": null,
+   "item": {
+    "ClientId": "clientId",
+    "ContactName": "contactName",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow",
+    "Email": "contactEmail",
+    "Phone": "contactPhone"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ClientContact]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ClientId": "clientId",
+    "ContactName": "contactName",
+    "Email": "contactEmail",
+    "Phone": "contactPhone",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ClientContact]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ClientContact]"
+ },
+ "BillingType": {
+  "select": {
+   "guid": [
+    "BillingTypeId",
+    false
+   ],
+   "code": [
+    "BillingTypeCode",
+    false
+   ],
+   "name": [
+    "BillingTypeName",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[BillingType]",
+   "id": null,
+   "item": {
+    "BillingTypeCode": "code",
+    "BillingTypeName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[BillingType]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "BillingTypeCode": "code",
+    "BillingTypeName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[BillingType]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[BillingType]"
+ },
+ "ApprovalStatus": {
+  "select": {
+   "ApprovalStatusCode": [
+    "ApprovalStatusCode",
+    false
+   ],
+   "ApprovalStatusName": [
+    "ApprovalStatusName",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ],
+   "guid": [
+    "Id",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ApprovalStatus]",
+   "id": null,
+   "item": {
+    "Guid": "@guid",
+    "ApprovalStatusCode": "code",
+    "ApprovalStatusName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ApprovalStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ApprovalStatusCode": "code",
+    "ApprovalStatusName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ApprovalStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ApprovalStatus]"
+ },
+ "UserRoles": {
+  "select": {
+   "guid": [
+    "Id",
+    false
+   ],
+   "userId": [
+    "UserId",
+    false
+   ],
+   "roleId": [
+    "RoleId",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[UserRoles]",
+   "id": null,
+   "item": {
+    "Guid": "@guid",
+    "UserId": "userId",
+    "RoleId": "roleId",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[UserRoles]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "UserId": "userId",
+    "RoleId": "roleId",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[UserRoles]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[UserRoles]"
+ },
+ "ProjectStatus": {
+  "select": {
+   "ProjectStatusCode": [
+    "ProjectStatusCode",
+    false
+   ],
+   "ProjectStatusName": [
+    "ProjectStatusName",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ],
+   "guid": [
+    "Id",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ProjectStatus]",
+   "id": null,
+   "item": {
+    "Guid": "@guid",
+    "ProjectStatusCode": "code",
+    "ProjectStatusName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ProjectStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ProjectStatusCode": "code",
+    "ProjectStatusName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ProjectStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ProjectStatus]"
+ },
+ "InvoiceStatus": {
+  "select": {
+   "guid": [
+    "InvoiceStatusId",
+    false
+   ],
+   "InvoiceStatusCode": [
+    "InvoiceStatusCode",
+    false
+   ],
+   "InvoiceStatusName": [
+    "InvoiceStatusName",
+    false
+   ],
+   "IsActive": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[InvoiceStatus]",
+   "id": null,
+   "item": {
+    "InvoiceStatusCode": "code",
+    "InvoiceStatusName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[InvoiceStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "InvoiceStatusCode": "code",
+    "InvoiceStatusName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[InvoiceStatus]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[InvoiceStatus]"
+ },
+ "PipelineProject": {
+  "select": {
+   "guid": [
+    "PipelineProjectId",
+    false
+   ],
+   "projectName": [
+    "ProjectName",
+    false
+   ],
+   "clientId": [
+    "ClientId",
+    false
+   ],
+   "dealValue": [
+    "DealValue",
+    false
+   ],
+   "dealStatusId": [
+    "DealStatusId",
+    false
+   ],
+   "expectedCloseDate": [
+    "ExpectedCloseDate",
+    false
+   ],
+   "ownerUserId": [
+    "OwnerUserID",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ],
+   "pipelineCode": [
+    "PipelineCode",
+    true
+   ],
+   "opportunityName": [
+    "OpportunityName",
+    true
+   ],
+   "projectManagerUserId": [
+    "ProjectManagerUserId",
+    true
+   ],
+   "deliveryHeadUserId": [
+    "DeliveryHeadUserId",
+    true
+   ],
+   "pipelineDepartmentId": [
+    "DepartmentId",
+    true
+   ],
+   "projectType": [
+    "ProjectType",
+    true
+   ],
+   "pipelineBillingTypeId": [
+    "BillingTypeId",
+    true
+   ],
+   "pipelineCurrencyId": [
+    "CurrencyId",
+    true
+   ],
+   "expectedStartDate": [
+    "ExpectedStartDate",
+    true
+   ],
+   "durationMonths": [
+    "DurationMonths",
+    true
+   ],
+   "probabilityPct": [
+    "ProbabilityPct",
+    true
+   ],
+   "priority": [
+    "Priority",
+    true
+   ],
+   "pipelineGeography": [
+    "Geography",
+    true
+   ],
+   "pipelineRemarks": [
+    "Remarks",
+    true
+   ],
+   "convertedToProjectId": [
+    "ConvertedToProjectId",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[PipelineProject]",
+   "id": null,
+   "item": {
+    "ProjectName": "projectName",
+    "ClientId": "clientId",
+    "DealValue": "dealValue",
+    "DealStatusId": "dealStatusId",
+    "OwnerUserID": "ownerUserId",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ExpectedCloseDate": "expectedCloseDate",
+    "PipelineCode": "pipelineCode",
+    "OpportunityName": "opportunityName",
+    "ProjectManagerUserId": "projectManagerUserId",
+    "DeliveryHeadUserId": "deliveryHeadUserId",
+    "DepartmentId": "pipelineDepartmentId",
+    "ProjectType": "projectType",
+    "BillingTypeId": "pipelineBillingTypeId",
+    "CurrencyId": "pipelineCurrencyId",
+    "ExpectedStartDate": "expectedStartDate",
+    "DurationMonths": "durationMonths",
+    "ProbabilityPct": "probabilityPct",
+    "Priority": "priority",
+    "Geography": "pipelineGeography",
+    "Remarks": "pipelineRemarks"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[PipelineProject]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ProjectName": "projectName",
+    "ClientId": "clientId",
+    "DealValue": "dealValue",
+    "DealStatusId": "dealStatusId",
+    "ExpectedCloseDate": "expectedCloseDate",
+    "OwnerUserID": "ownerUserId",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow",
+    "PipelineCode": "pipelineCode",
+    "OpportunityName": "opportunityName",
+    "ProjectManagerUserId": "projectManagerUserId",
+    "DeliveryHeadUserId": "deliveryHeadUserId",
+    "DepartmentId": "pipelineDepartmentId",
+    "ProjectType": "projectType",
+    "BillingTypeId": "pipelineBillingTypeId",
+    "CurrencyId": "pipelineCurrencyId",
+    "ExpectedStartDate": "expectedStartDate",
+    "DurationMonths": "durationMonths",
+    "ProbabilityPct": "probabilityPct",
+    "Priority": "priority",
+    "Geography": "pipelineGeography",
+    "Remarks": "pipelineRemarks"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[PipelineProject]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[PipelineProject]"
+ },
+ "ProjectResourceTxn": {
+  "select": {
+   "guid": [
+    "ProjectResourceTxnId",
+    false
+   ],
+   "projectId": [
+    "ProjectId",
+    false
+   ],
+   "userId": [
+    "UserID",
+    false
+   ],
+   "roleId": [
+    "RoleId",
+    false
+   ],
+   "startDate": [
+    "StartDate",
+    false
+   ],
+   "endDate": [
+    "EndDate",
+    false
+   ],
+   "allocationPct": [
+    "AllocationPct",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ProjectResourceTxn]",
+   "id": null,
+   "item": {
+    "ProjectId": "projectId",
+    "UserID": "userId",
+    "RoleId": "roleId",
+    "AllocationPct": "allocationPct",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "StartDate": "startDate",
+    "EndDate": "endDate"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ProjectResourceTxn]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ProjectId": "projectId",
+    "UserID": "userId",
+    "RoleId": "roleId",
+    "StartDate": "startDate",
+    "EndDate": "?end@{triggerBody()?['endDate']}",
+    "AllocationPct": "allocationPct",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ProjectResourceTxn]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ProjectResourceTxn]"
+ },
+ "Location": {
+  "select": {
+   "guid": [
+    "LocationId",
+    false
+   ],
+   "code": [
+    "LocationCode",
+    false
+   ],
+   "name": [
+    "LocationName",
+    false
+   ],
+   "countryId": [
+    "CountryId",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Location]",
+   "id": null,
+   "item": {
+    "LocationCode": "code",
+    "LocationName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "CountryId": "countryId",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Location]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "LocationCode": "code",
+    "LocationName": "name",
+    "CountryId": "countryId",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Location]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Location]"
+ },
+ "Designation": {
+  "select": {
+   "guid": [
+    "DesignationId",
+    false
+   ],
+   "code": [
+    "DesignationCode",
+    false
+   ],
+   "name": [
+    "DesignationName",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Designation]",
+   "id": null,
+   "item": {
+    "DesignationCode": "code",
+    "DesignationName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Designation]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "DesignationCode": "code",
+    "DesignationName": "name",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Designation]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Designation]"
+ },
+ "Currency": {
+  "select": {
+   "guid": [
+    "CurrencyId",
+    false
+   ],
+   "countryId": [
+    "CountryId",
+    false
+   ],
+   "code": [
+    "CurrencyCode",
+    false
+   ],
+   "name": [
+    "CurrencyName",
+    false
+   ],
+   "symbol": [
+    "Symbol",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Currency]",
+   "id": null,
+   "item": {
+    "CurrencyCode": "code",
+    "CurrencyName": "name",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "CountryId": "countryId",
+    "Symbol": "symbol",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Currency]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "CountryId": "countryId",
+    "CurrencyCode": "code",
+    "CurrencyName": "name",
+    "Symbol": "symbol",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Currency]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Currency]"
+ },
+ "BillingPeriod": {
+  "select": {
+   "guid": [
+    "BillingPeriodId",
+    false
+   ],
+   "billingMonth": [
+    "BillingMonth",
+    false
+   ],
+   "billingYear": [
+    "BillingYear",
+    false
+   ],
+   "periodName": [
+    "PeriodName",
+    false
+   ],
+   "periodStartDate": [
+    "PeriodStartDate",
+    false
+   ],
+   "periodEndDate": [
+    "PeriodEndDate",
+    false
+   ],
+   "isClosed": [
+    "IsClosed",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[BillingPeriod]",
+   "id": null,
+   "item": {
+    "BillingMonth": "billingMonth",
+    "BillingYear": "billingYear",
+    "PeriodName": "periodName",
+    "PeriodStartDate": "periodStartDate",
+    "PeriodEndDate": "periodEndDate",
+    "IsClosed": "isClosed",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[BillingPeriod]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "BillingMonth": "billingMonth",
+    "BillingYear": "billingYear",
+    "PeriodName": "periodName",
+    "PeriodStartDate": "periodStartDate",
+    "PeriodEndDate": "periodEndDate",
+    "IsClosed": "isClosed",
+    "IsActive": "active"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[BillingPeriod]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[BillingPeriod]"
+ },
+ "Billing": {
+  "select": {
+   "guid": [
+    "BillingId",
+    false
+   ],
+   "projectId": [
+    "ProjectId",
+    false
+   ],
+   "billingPeriodId": [
+    "BillingPeriodId",
+    false
+   ],
+   "billingTypeId": [
+    "BillingTypeId",
+    false
+   ],
+   "amount": [
+    "Amount",
+    false
+   ],
+   "currencyId": [
+    "CurrencyId",
+    false
+   ],
+   "milestoneName": [
+    "MilestoneName",
+    false
+   ],
+   "submittedByUserId": [
+    "SubmittedByUserId",
+    false
+   ],
+   "approvalStatusId": [
+    "ApprovalStatusId",
+    false
+   ],
+   "approvedByUserId": [
+    "ApprovedByUserId",
+    false
+   ],
+   "approvedOn": [
+    "ApprovedOn",
+    false
+   ],
+   "remarks": [
+    "Remarks",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Billing]",
+   "id": null,
+   "item": {
+    "ProjectId": "projectId",
+    "BillingTypeId": "billingTypeId",
+    "Amount": "amount",
+    "ApprovalStatusId": "?6",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "BillingPeriodId": "billingPeriodId",
+    "CurrencyId": "currencyId",
+    "MilestoneName": "milestoneName",
+    "SubmittedByUserId": "submittedByUserId",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Billing]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ProjectId": "projectId",
+    "BillingPeriodId": "billingPeriodId",
+    "BillingTypeId": "billingTypeId",
+    "Amount": "amount",
+    "CurrencyId": "currencyId",
+    "MilestoneName": "milestoneName",
+    "ApprovalStatusId": "approvalStatusId",
+    "ApprovedByUserId": "approvedByUserId",
+    "ApprovedOn": "approvedOn",
+    "Remarks": "remarks",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Billing]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Billing]"
+ },
+ "ProjectApproval": {
+  "select": {
+   "guid": [
+    "ApprovalId",
+    true
+   ],
+   "projectId": [
+    "ProjectId",
+    true
+   ],
+   "cpPercent": [
+    "CPPercent",
+    true
+   ],
+   "requestedByUserId": [
+    "RequestedByUserId",
+    true
+   ],
+   "approvalStatusId": [
+    "ApprovalStatusId",
+    true
+   ],
+   "comments": [
+    "Comments",
+    true
+   ],
+   "decidedByUserId": [
+    "DecidedByUserId",
+    true
+   ],
+   "decidedOn": [
+    "DecidedOn",
+    true
+   ],
+   "active": [
+    "IsActive",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ProjectApproval]",
+   "id": null,
+   "item": {
+    "ProjectId": "projectId",
+    "ApprovalStatusId": "approvalStatusId",
+    "CreatedOn": "@utcNow",
+    "IsActive": "active",
+    "CPPercent": "cpPercent",
+    "RequestedByUserId": "requestedByUserId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ProjectApproval]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "ApprovalStatusId": "approvalStatusId",
+    "Comments": "comments",
+    "DecidedByUserId": "decidedByUserId",
+    "DecidedOn": "decidedOn",
+    "IsActive": "active"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ProjectApproval]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ProjectApproval]"
+ },
+ "ProjectDocument": {
+  "select": {
+   "guid": [
+    "ProjectDocumentId",
+    false
+   ],
+   "projectId": [
+    "ProjectId",
+    false
+   ],
+   "docName": [
+    "DocName",
+    false
+   ],
+   "docType": [
+    "DocType",
+    false
+   ],
+   "uploadedByUserId": [
+    "UploadedByUserID",
+    false
+   ],
+   "uploadDate": [
+    "UploadDate",
+    false
+   ],
+   "fileName": [
+    "FileName",
+    false
+   ],
+   "active": [
+    "IsActive",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[ProjectDocument]",
+   "id": null,
+   "item": {
+    "ProjectId": "projectId",
+    "DocName": "docName",
+    "DocType": "docType",
+    "UploadedByUserID": "uploadedByUserId",
+    "UploadDate": "uploadDate",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "FileName": "fileName",
+    "FileData": "fileData"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[ProjectDocument]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "DocName": "docName",
+    "DocType": "docType",
+    "IsActive": "active"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[ProjectDocument]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[ProjectDocument]"
+ },
+ "Timesheet": {
+  "select": {
+   "guid": [
+    "TimesheetId",
+    true
+   ],
+   "employeeUserId": [
+    "EmployeeUserID",
+    true
+   ],
+   "projectId": [
+    "ProjectId",
+    true
+   ],
+   "weekEnding": [
+    "WeekEnding",
+    true
+   ],
+   "hours": [
+    "Hours",
+    true
+   ],
+   "status": [
+    "Status",
+    true
+   ],
+   "billingPeriodId": [
+    "BillingPeriodId",
+    true
+   ],
+   "approvalStatusId": [
+    "ApprovalStatusId",
+    true
+   ],
+   "approvedByUserId": [
+    "ApprovedByUserId",
+    true
+   ],
+   "approvedOn": [
+    "ApprovedOn",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Timesheet]",
+   "id": null,
+   "item": {
+    "EmployeeUserID": "employeeUserId",
+    "ProjectId": "projectId",
+    "WeekEnding": "weekEnding",
+    "Hours": "hours",
+    "Status": "status",
+    "CreatedOn": "@utcNow",
+    "ModifiedOn": "@utcNow",
+    "BillingPeriodId": "billingPeriodId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Timesheet]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "Hours": "hours",
+    "Status": "status",
+    "ModifiedOn": "@utcNow",
+    "ApprovalStatusId": "approvalStatusId",
+    "ApprovedByUserId": "approvedByUserId",
+    "ApprovedOn": "approvedOn"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Timesheet]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Timesheet]"
+ },
+ "AuditLog": {
+  "select": {
+   "guid": [
+    "AuditLogId",
+    true
+   ],
+   "screenName": [
+    "ScreenName",
+    true
+   ],
+   "auditAction": [
+    "Action",
+    true
+   ],
+   "recordName": [
+    "RecordName",
+    true
+   ],
+   "byUser": [
+    "ByUser",
+    true
+   ],
+   "loggedOn": [
+    "LoggedOn",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[AuditLog]",
+   "id": null,
+   "item": {
+    "ScreenName": "screenName",
+    "Action": "auditAction",
+    "LoggedOn": "@utcNow",
+    "RecordName": "recordName",
+    "ByUser": "byUser"
+   }
+  },
+  "EDIT": null,
+  "DELETE": null,
+  "table": "[dbo].[AuditLog]"
+ },
+ "ProjectDocumentFile": {
+  "select": {
+   "guid": [
+    "ProjectDocumentId",
+    true
+   ],
+   "docName": [
+    "DocName",
+    true
+   ],
+   "docType": [
+    "DocType",
+    true
+   ],
+   "fileName": [
+    "FileName",
+    true
+   ],
+   "fileData": [
+    "FileData",
+    true
+   ]
+  },
+  "CREATE": null,
+  "EDIT": null,
+  "DELETE": null,
+  "table": "[dbo].[ProjectDocument]"
+ },
+ "Invoice": {
+  "select": {
+   "guid": [
+    "InvoiceId",
+    true
+   ],
+   "invoiceNumber": [
+    "InvoiceNumber",
+    true
+   ],
+   "clientId": [
+    "ClientId",
+    true
+   ],
+   "projectId": [
+    "ProjectId",
+    true
+   ],
+   "amount": [
+    "Amount",
+    true
+   ],
+   "invoiceDate": [
+    "InvoiceDate",
+    true
+   ],
+   "dueDate": [
+    "DueDate",
+    true
+   ],
+   "currencyId": [
+    "CurrencyId",
+    true
+   ],
+   "billingPeriodId": [
+    "BillingPeriodId",
+    true
+   ],
+   "totalBillableHours": [
+    "TotalBillableHours",
+    true
+   ],
+   "invoiceStatusId": [
+    "InvoiceStatusId",
+    true
+   ],
+   "paymentDate": [
+    "PaymentDate",
+    true
+   ],
+   "paymentReference": [
+    "PaymentReference",
+    true
+   ],
+   "financeRemarks": [
+    "FinanceRemarks",
+    true
+   ],
+   "billingId": [
+    "BillingId",
+    true
+   ],
+   "active": [
+    "IsActive",
+    true
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Invoice]",
+   "id": null,
+   "item": {
+    "InvoiceNumber": "invoiceNumber",
+    "ClientId": "clientId",
+    "Amount": "amount",
+    "IsActive": "active",
+    "CreatedOn": "@utcNow",
+    "ProjectId": "projectId",
+    "DueDate": "dueDate",
+    "ModifiedOn": "@utcNow",
+    "InvoiceDate": "invoiceDate",
+    "CurrencyId": "currencyId",
+    "BillingPeriodId": "billingPeriodId",
+    "TotalBillableHours": "totalBillableHours",
+    "InvoiceStatusId": "invoiceStatusId",
+    "FinanceRemarks": "financeRemarks",
+    "BillingId": "billingId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Invoice]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "InvoiceNumber": "invoiceNumber",
+    "ClientId": "clientId",
+    "ProjectId": "projectId",
+    "Amount": "amount",
+    "DueDate": "dueDate",
+    "IsActive": "active",
+    "ModifiedOn": "@utcNow",
+    "InvoiceDate": "invoiceDate",
+    "CurrencyId": "currencyId",
+    "BillingPeriodId": "billingPeriodId",
+    "TotalBillableHours": "totalBillableHours",
+    "InvoiceStatusId": "invoiceStatusId",
+    "PaymentDate": "paymentDate",
+    "PaymentReference": "paymentReference",
+    "FinanceRemarks": "financeRemarks",
+    "BillingId": "billingId"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Invoice]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Invoice]"
+ },
+ "Auth": {
+  "select": null,
+  "CREATE": null,
+  "EDIT": null,
+  "DELETE": null,
+  "table": null
+ },
+ "Permission": {
+  "select": null,
+  "CREATE": null,
+  "EDIT": null,
+  "DELETE": null,
+  "table": null
+ },
+ "Holiday": {
+  "select": {
+   "guid": [
+    "HolidayId",
+    false
+   ],
+   "holidayDate": [
+    "HolidayDate",
+    false
+   ],
+   "holidayName": [
+    "HolidayName",
+    false
+   ],
+   "locationId": [
+    "LocationId",
+    false
+   ],
+   "active": [
+    "Active",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[Holiday]",
+   "id": null,
+   "item": {
+    "HolidayDate": "holidayDate",
+    "HolidayName": "holidayName",
+    "Active": "active",
+    "CreatedOn": "@utcNow",
+    "LocationId": "locationId"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[Holiday]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "HolidayDate": "holidayDate",
+    "HolidayName": "holidayName",
+    "LocationId": "locationId",
+    "Active": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[Holiday]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[Holiday]"
+ },
+ "BillingResource": {
+  "select": {
+   "guid": [
+    "BillingResourceId",
+    false
+   ],
+   "billingId": [
+    "BillingId",
+    false
+   ],
+   "userId": [
+    "UserId",
+    false
+   ],
+   "hoursPerDay": [
+    "HoursPerDay",
+    false
+   ],
+   "workingDays": [
+    "WorkingDays",
+    false
+   ],
+   "plannedHours": [
+    "PlannedHours",
+    false
+   ],
+   "actualHours": [
+    "ActualHours",
+    false
+   ],
+   "active": [
+    "Active",
+    false
+   ]
+  },
+  "CREATE": {
+   "table": "[dbo].[BillingResource]",
+   "id": null,
+   "item": {
+    "BillingId": "billingId",
+    "UserId": "userId",
+    "HoursPerDay": "hoursPerDay",
+    "WorkingDays": "workingDays",
+    "PlannedHours": "plannedHours",
+    "ActualHours": "actualHours",
+    "Active": "active",
+    "CreatedOn": "@utcNow"
+   }
+  },
+  "EDIT": {
+   "table": "[dbo].[BillingResource]",
+   "id": "@triggerBody()?['guid']",
+   "item": {
+    "HoursPerDay": "hoursPerDay",
+    "WorkingDays": "workingDays",
+    "PlannedHours": "plannedHours",
+    "ActualHours": "actualHours",
+    "Active": "active",
+    "ModifiedOn": "@utcNow"
+   }
+  },
+  "DELETE": {
+   "table": "[dbo].[BillingResource]",
+   "id": "@triggerBody()?['guid']",
+   "item": {}
+  },
+  "table": "[dbo].[BillingResource]"
+ }
+}

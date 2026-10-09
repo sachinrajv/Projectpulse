@@ -1,0 +1,24 @@
+{
+  "name": "projectpulse-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Express + SQL Server API replacing the ProjectPulse Power Automate flows",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test:smoke": "node scripts/smoke.js",
+    "verify:flows": "node scripts/verify-flows.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1",
+    "nodemailer": "^6.10.1"
+  }
+}
